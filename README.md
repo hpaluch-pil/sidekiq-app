@@ -1,10 +1,13 @@
 # Demo app - Sidekiq and Sinatra together
 
-Here is prototype is simple application that uses
+Here is prototype of simple application that uses
 Sinatra for web frontend and Sidekiq for Job processing backend.
 
-The intent is to have as simple prototype as possible to test
-how Sidekiq behaves (it is also used in famous GitLab).
+The intent is to have as simple app as possible to test
+how Sidekiq behaves - I want to learn how
+to maintain Sidekiq in complex environment (like GitLab,
+although they use Rails instead of Sinatra, so this example
+is not one-to-one).
 
 Main components are:
 
@@ -12,7 +15,7 @@ Main components are:
 * [Sinatra Web framework](http://sinatrarb.com/)
 * [Rack](https://github.com/rack/rack) - modular web server interface
 
-# Setup
+## Setup
 
 Tested on Debian 11/amd64.
 
@@ -34,7 +37,7 @@ irb -r securerandom
 File.open(".session.key", "w") {|f| f.write(SecureRandom.hex(32)) }
 # enter "quit" to quit IRB
 ```
-You can look into `.session.key` file - it will contain just one long hex string.
+You can look into `.session.key` file - it should contain just one long hex string.
 
 Now run in one terminal Sidekiq Worker (it will process Enqueued jobs):
 ```bash
@@ -52,7 +55,7 @@ Point your browser to `http://IP_OF_SERVER:9292` and follow instructions.
   job was really processed
 
 
-= Resources
+## Resources
 
 There was used vast amount of Internet resources for this demo.
 Please see comments in source code for links.
