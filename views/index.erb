@@ -1,0 +1,14 @@
+<ul>
+  <li><a href="/sidekiq">Manage Sidekiq</a></li>
+  <li>Enqeue new job via Form:
+    <form action="/formwork" method="POST">
+      <label>Job Sleep Time (s):</label>
+      <input type="text" name="sleep" value="<%= h params[:sleep] %>"/>
+      <input type="submit" name="submit" value="Enqeue Job">
+    </form>
+  </li>
+  <li><a href="/work?t=<%= Time.now.strftime('%s') %>">Enqeue new job</a> using GET</li>
+  <li><a href="/queue-size">Queue Size</a></li>
+  <li><a href="/queue-status">Queue Status</a> ("Red" if Queue size is &gt;= 100).</li>
+</ul>
+
