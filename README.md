@@ -12,6 +12,9 @@ is not one-to-one).
 Main components are:
 
 * [SIdekiq job scheduler](https://github.com/mperham/sidekiq)
+  * [Sidekiq-Cron](https://github.com/ondrejbartas/sidekiq-cron) - provides regular
+    cron scheduler for free (normally available in Enterprise Sidekiq version).
+    This components is also used by GitLab.
 * [Sinatra Web framework](http://sinatrarb.com/)
 * [Rack](https://github.com/rack/rack) - modular web server interface
 
@@ -54,6 +57,11 @@ Point your browser to `http://IP_OF_SERVER:9292` and follow instructions.
 - you can then watch on Worker's terminal (that is running `./run_worker.sh`) that
   job was really processed
 
+## Bugs
+
+`Pipelining commands on a Redis instance is deprecated and will be removed in Redis 5.0.0.`
+- Known bug in Sidekiq:
+  - https://github.com/mperham/sidekiq/issues/5202
 
 ## Resources
 

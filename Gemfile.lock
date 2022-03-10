@@ -1,9 +1,16 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    concurrent-ruby (1.1.9)
     connection_pool (2.2.5)
+    et-orbi (1.2.7)
+      tzinfo
+    fugit (1.5.2)
+      et-orbi (~> 1.1, >= 1.1.8)
+      raabro (~> 1.4)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    raabro (1.4.0)
     rack (2.2.3)
     rack-protection (2.2.0)
       rack
@@ -13,12 +20,17 @@ GEM
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
+    sidekiq-cron (1.2.0)
+      fugit (~> 1.1)
+      sidekiq (>= 4.2.1)
     sinatra (2.2.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
       rack-protection (= 2.2.0)
       tilt (~> 2.0)
     tilt (2.0.10)
+    tzinfo (2.0.4)
+      concurrent-ruby (~> 1.0)
 
 PLATFORMS
   x86_64-linux
@@ -26,6 +38,7 @@ PLATFORMS
 DEPENDENCIES
   rack
   sidekiq
+  sidekiq-cron
   sinatra
 
 BUNDLED WITH
